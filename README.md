@@ -11,4 +11,4 @@ Member: Yilai Yan(yy97), Weijian Zeng(wz48), Wanrong Cai(wc52)
 ###### 		https://docs.google.com/document/d/1YWSil1fmci6cx7KgJwDyTjAbwgPwlrPp9Z8RELyTbgg/edit?usp=sharing
 
 ## dataset: 
-###### review_data.json crawler.py
+###### review_data.json crawler.py data.json
