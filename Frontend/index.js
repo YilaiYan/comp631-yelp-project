@@ -38,16 +38,17 @@ function getData(key,value,facet,facetcontain,ignore){
     }
     console.log(str);
     let keypart="q.op=OR&q="+key+"%3A%22"+str+"%22";
-    let facetpart="http://localhost:8983/solr/COMP631_project/select?";
+    let facetpart="http://localhost:8983/solr/test/select?";
     if(facet){
         facetpart+="facet.field=text&facet=true&";
     }
     if(typeof facetcontain !== 'undefined'){
-        facetpart+="facet.field="+facetcontain+"&";
+        facetpart+="facet.contains="+facetcontain+"&";
     }
     if(ignore){
         facetpart+="facet.contains.ignoreCase=true&";
     }
+    console.log(facetpart+keypart);
     let fetchRes = fetch(facetpart+keypart,{
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
@@ -55,9 +56,7 @@ function getData(key,value,facet,facetcontain,ignore){
     });
     return fetchRes.then(res =>
         res.json()).then(d => {
-            let data=d.response;
-            // console.log(data);
-            return data
+            return d;
     })
 }
 window.onload=function(){
@@ -67,7 +66,9 @@ window.onload=function(){
         console.log("Search box value: ",$( "#search" ).val());
         (async () => {
             // console.log(await getData("business_name","Pho Van"));
-            console.log(await getData("business_name",$( "#search" ).val()));
+            let data=await getData("business_name",$( "#search" ).val(),true,"disappoint",true);
+            console.log(data);
+
          })()
         console.log("Location box value: ",$( "#location" ).val());
     });
