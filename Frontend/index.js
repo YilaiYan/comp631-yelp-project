@@ -59,6 +59,7 @@ function getData(key,value,facet,facetcontain,ignore){
             return d;
     })
 }
+
 window.onload=function(){
     console.log("Load index.js")
     let dict = {};
