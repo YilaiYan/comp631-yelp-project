@@ -22,6 +22,7 @@ function getRestaurantList(){
     });
     return fetchRes.then(res =>
         res.json()).then(d => {
+            console.log(d.response)
             let data=d.response.docs[0].business_name_list;
             // console.log(data);
             return data
@@ -32,7 +33,6 @@ function getRestaurantList(){
     var restaurantListWithDuplicate=await getRestaurantList();
     console.log(restaurantListWithDuplicate);
     console.log(restaurantListWithDuplicate);
-    const restaurantListWithDuplicate = require('../Austin_business_list.json');
     var set = new Set();
     restaurantListWithDuplicate.forEach(element => set.add(element));
     var restaurantList = Array.from(set);

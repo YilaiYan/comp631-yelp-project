@@ -1,5 +1,3 @@
-
-
 function isalpha(val){
     if(val>='a' && val<='z') return true;
     if(val>='A' && val<='Z') return true;
@@ -40,7 +38,7 @@ function getData(key,value,facet,facetcontain,ignore){
     }
     console.log(str);
     let keypart="q.op=OR&q="+key+"%3A%22"+str+"%22";
-    let facetpart="http://localhost:8983/solr/test/select?";
+    let facetpart="http://localhost:8983/solr/COMP631_project/select?";
     if(facet){
         facetpart+="facet.field=text&facet=true&";
     }
@@ -67,10 +65,10 @@ window.onload=function(){
     $( "button" ).click(function() {
         console.log("Test search button")
         console.log("Search box value: ",$( "#search" ).val());
+        (async () => {
+            // console.log(await getData("business_name","Pho Van"));
+            console.log(await getData("business_name",$( "#search" ).val()));
+         })()
         console.log("Location box value: ",$( "#location" ).val());
     });
-    let global_data="";
-    (async () => {
-        console.log(await getData("business_name","Pho Van"));
-     })()
 }
