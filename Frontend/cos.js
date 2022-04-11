@@ -31,8 +31,8 @@ function getRestaurantList(){
 
 (async () => {
     var restaurantListWithDuplicate=await getRestaurantList();
-    console.log(restaurantListWithDuplicate);
-    console.log(restaurantListWithDuplicate);
+    // console.log(restaurantListWithDuplicate);
+    // console.log(restaurantListWithDuplicate);
     var set = new Set();
     restaurantListWithDuplicate.forEach(element => set.add(element));
     var restaurantList = Array.from(set);
@@ -157,7 +157,8 @@ function getRestaurantList(){
         // var queue = new PriorityQueue((a,b) => (textCosineSimilarity(a, inputRestaurant) - textCosineSimilarity(b, inputRestaurant)));
         // var queue = new PriorityQueue(); 
         var similiarListStepOne = mostSimiliarRestaurant(inputRestaurant);
-        console.log(similiarListStepOne);
+        // console.log(similiarListStepOne);
+        
         // queue.enqueue(similiarListStepOne[0]);
         // for (var i = 1; i < similiarListStepOne.length; i++) {
         //     // console.log(queue.toArray());
