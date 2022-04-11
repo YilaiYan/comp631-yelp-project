@@ -59,6 +59,7 @@ function getData(key,value,facet,facetcontain,ignore){
             return d;
     })
 }
+
 window.onload=function(){
     console.log("Load index.js")
     $( "button" ).click(function() {
@@ -67,8 +68,12 @@ window.onload=function(){
         (async () => {
             // console.log(await getData("business_name","Pho Van"));
             let data=await getData("business_name",$( "#search" ).val(),true,"disappoint",true);
+            if(data.response.numFound===0){
+                // Harry Potter will be the replaced word
+                let person = prompt("Do you mean this word? ", "Harry Potter");
+                $( "#search" ).val(person);
+            }
             console.log(data);
-
          })()
         console.log("Location box value: ",$( "#location" ).val());
     });
