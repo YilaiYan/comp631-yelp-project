@@ -14,7 +14,7 @@
     <div class="s01">
       <form>
         <fieldset>
-          <legend>Discover the Amazing City</legend>
+          <legend>Discover the Amazing Restaurant</legend>
         </fieldset>
         <div class="inner-form">
           <div class="input-field first-wrap">
@@ -36,15 +36,37 @@
           </div>
         </div>
       </form>
-      <div id="chartdiv"></div>
     </div>
+
+    <div class="row" id="charts">
+      <div class="column" id="chartdiv"></div>
+      <div class="column" id="lineChartdiv">
+        <div></div>
+        <canvas id="lineChart"></canvas>
+      </div>
+    </div>
+
   </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
 <style>
   #chartdiv {
-    width: 100%;
+    width: 50%;
     height: 600px;
   }
+  #lineChartdiv {
+    width: 50%;
+    height: 600px;
+  }
+  .column {
+  float: left;
+  width: 50%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
   </style>
   
   <!-- Resources -->
@@ -53,6 +75,9 @@
   <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/wc.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
   
   
   <!-- Chart code -->
@@ -171,4 +196,44 @@
   ]);
   
   }); // end am5.ready()
-  </script>
+
+  //line chart script
+var xyValues = [
+  {x:2004, y:2.5},
+  {x:2010, y:3}
+];
+
+new Chart("lineChart", {
+  type: "scatter",
+  data: {
+    datasets: [{
+      pointRadius: 4,
+      pointBackgroundColor: "rgb(0,255,255)",
+      data: xyValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Customer Rate Scatter',
+    },
+    legend: {display: false},
+    scales: {
+      xAxes: [{
+        ticks: {min: 2004, max:2022},
+        scaleLabel: {
+        display: true,
+        labelString: 'Years'
+      }}],
+      yAxes: [{
+        ticks: {min: 0, max:5},
+        scaleLabel: {
+        display: true,
+        labelString: 'Rate Star'
+      }}],
+    }
+  }
+});
+
+
+</script>
