@@ -155,61 +155,50 @@
   // Data from:
   // https://insights.stackoverflow.com/survey/2021#section-most-popular-technologies-programming-scripting-and-markup-languages
   series.data.setAll([
-    { tag: "JavaScript", weight: 64.96 },
-    { tag: "HTML/CSS", weight: 56.07 },
-    { tag: "Python", weight: 48.24 },
-    { tag: "SQL", weight: 47.08 },
-    { tag: "Java", weight: 35.35 },
-    { tag: "Node.js", weight: 33.91 },
-    { tag: "TypeScript", weight: 30.19 },
-    { tag: "C#", weight: 27.86 },
-    { tag: "Bash/Shell", weight: 27.13 },
-    { tag: "C++", weight: 24.31 },
-    { tag: "PHP", weight: 21.98 },
-    { tag: "C", weight: 21.01 },
-    { tag: "PowerShell", weight: 10.75 },
-    { tag: "Go", weight: 9.55 },
-    { tag: "Kotlin", weight: 8.32 },
-    { tag: "Rust", weight: 7.03 },
-    { tag: "Ruby", weight: 6.75 },
-    { tag: "Dart", weight: 6.02 },
-    { tag: "Assembly", weight: 5.61 },
-    { tag: "Swift", weight: 5.1 },
-    { tag: "R", weight: 5.07 },
-    { tag: "VBA", weight: 4.66 },
-    { tag: "Matlab", weight: 4.66 },
-    { tag: "Groovy", weight: 3.01 },
-    { tag: "Objective-C", weight: 2.8 },
-    { tag: "Scala", weight: 2.6 },
-    { tag: "Perl", weight: 2.46 },
-    { tag: "Haskell", weight: 2.12 },
-    { tag: "Delphi", weight: 2.1 },
-    { tag: "Clojure", weight: 1.88 },
-    { tag: "Elixir", weight: 1.74 },
-    { tag: "LISP", weight: 1.33 },
-    { tag: "Julia", weight: 1.29 },
-    { tag: "F#", weight: 0.97 },
-    { tag: "Erlang", weight: 0.79 },
-    { tag: "APL", weight: 0.65 },
-    { tag: "Crystal", weight: 0.56 },
-    { tag: "COBOL", weight: 0.53 },
+  { tag: "popular", weight: 54.96 },
+    { tag: "wonderful", weight: 50.07 },
+    { tag: "distinct", weight: 48.24 },
+    { tag: "clean", weight: 47.08 },
+    { tag: "excellent", weight: 35.35 },
+    { tag: "delicious", weight: 33.91 },
+    { tag: "expensive", weight: 30.19 },
+    { tag: "impressive", weight: 27.86 },
+    { tag: "beautiful", weight: 27.13 },
+    { tag: "big", weight: 24.31 },
+    { tag: "dirty", weight: 21.98 },
+    { tag: "terrible", weight: 21.01 },
+    { tag: "alluring", weight: 10.75 },
+    { tag: "exquisite", weight: 9.55 },
+    { tag: "lovely", weight: 8.32 },
+    { tag: "stunning", weight: 7.03 },
+    { tag: "splendid", weight: 6.75 },
+    { tag: "attractive", weight: 6.02 },
+    { tag: "appealing", weight: 5.61 },
+    { tag: "charming", weight: 5.1 },
+    { tag: "gorgeous", weight: 5.07 },
+    { tag: "breathtaking", weight: 4.66 },
+    
   ]);
   
   }); // end am5.ready()
 
   //line chart script
 var xyValues = [
-  {x:2004, y:2.5},
-  {x:2010, y:3}
+  {x:2016, y:3.9},
+  {x:2017, y:4.5},
+  {x:2018, y:4.6},
+  {x:2019, y:4.2},
+  {x:2020, y:4.0}
 ];
 
 new Chart("lineChart", {
   type: "scatter",
+
   data: {
     datasets: [{
       pointRadius: 4,
       pointBackgroundColor: "rgb(0,255,255)",
-      data: xyValues
+      data: xyValues,
     }]
   },
   options: {
@@ -220,7 +209,7 @@ new Chart("lineChart", {
     legend: {display: false},
     scales: {
       xAxes: [{
-        ticks: {min: 2004, max:2022},
+        ticks: {min: 2016, max:2020},
         scaleLabel: {
         display: true,
         labelString: 'Years'
@@ -229,7 +218,7 @@ new Chart("lineChart", {
         ticks: {min: 0, max:5},
         scaleLabel: {
         display: true,
-        labelString: 'Rate Star'
+        labelString: 'Rate Stars'
       }}],
     }
   }
