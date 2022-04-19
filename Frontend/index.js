@@ -68,6 +68,15 @@ window.onload=function(){
     let dict = {};
     let words = ["disappoint","good","bad"];
     $( "button" ).click(function() {
+
+        
+        var charts = document.getElementById("charts");
+        if (charts.style.display === "none") {
+            charts.style.display = "block";
+        } else {
+            charts.style.display = "none";
+        }
+          
         // console.log("Test search button")
         // console.log("Search box value: ",$( "#search" ).val());
         (async () => {
